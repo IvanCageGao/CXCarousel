@@ -161,6 +161,13 @@
 
 -(void) destroy{
     [self.timer invalidate];
+    self.timer = nil;
+}
+
+-(void) restart{
+    if (self.hasTimer && self.timer == nil) {
+        [self setupTimer];
+    }
 }
 
 #pragma mark - UIScrollView
