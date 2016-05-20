@@ -29,16 +29,6 @@
 
 @implementation CXCarouselView
 
-
-
-+(instancetype)initWithFrame:(CGRect)frame withArray:(NSArray*) array hasTimer:(BOOL)hastimer interval:(NSUInteger)inter{
-    CXCarouselView * carousel = [[CXCarouselView alloc] initWithFrame:frame];
-    carousel.hasTimer = hastimer;
-    carousel.interval = inter;
-    [carousel setupWithArray:array];
-    return carousel;
-}
-
 +(instancetype)initWithFrame:(CGRect)frame hasTimer:(BOOL)hastimer interval:(NSUInteger)inter placeHolder:(UIImage *)image{
     
     CXCarouselView * carousel = [[CXCarouselView alloc] initWithFrame:frame];
@@ -62,23 +52,12 @@
 }
 
 -(void) setupWithArray:(NSArray *)array{
-    self.wheelScrollView.scrollEnabled = YES;
-    self.mask.hidden = YES;
-    self.imageArray = array;
-    self.imageNum = self.imageArray.count;
-    self.currentImageIndex = 0;
+    if ([array count] <= 0) return;
     
-    if (self.imageNum == 1) {
-        self.wheelPageControl.hidden = YES;
-        self.wheelScrollView.scrollEnabled = NO;
+    if ([[array firstObject] rangeOfString:@"http"].location == NSNotFound) {
+        self.isLocal = YES;
     }
     
-    
-    [self setup];
-}
-
--(void) setupWithLocalArray:(NSArray *)array{
-    self.isLocal = YES;
     self.wheelScrollView.scrollEnabled = YES;
     self.mask.hidden = YES;
     self.imageArray = array;

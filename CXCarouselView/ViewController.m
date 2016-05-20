@@ -24,7 +24,7 @@
     self.carousel = [CXCarouselView initWithFrame:CGRectMake(0, 20, DeviceWidth , 200) hasTimer:YES interval:3 placeHolder:[UIImage imageNamed:@"loading"]];
     [self.view addSubview:self.carousel];
     NSArray *array = @[@"img1",@"img2",@"img3"];
-    [self.carousel setupWithLocalArray:array];
+    [self.carousel setupWithArray:array];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
