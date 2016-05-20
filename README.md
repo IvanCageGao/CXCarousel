@@ -2,6 +2,7 @@
 一个方便的滚播图控件
 ## 更新
 去掉了一些重复的方法，简化接口的使用。
+![](https://github.com/wcxdell/CXCarousel/blob/master/image-folder/img.gif)
 ## 说明
 可以使用传入本地图片和传入url的方式。传入url会将图片进行缓存。用的是sdWebimage,所以这个要有。
 ## 本地和网络图片都可以使用，网络图片传入url即可。
@@ -20,5 +21,5 @@ NSArray *array = @[@"img1",@"img2",@"img3"];
 ```
 [self.carousel restart];
 ```
-![](https://github.com/wcxdell/CXCarousel/blob/master/image-folder/img.gif)
+
 
