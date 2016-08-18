@@ -27,7 +27,11 @@
 @property (assign, nonatomic) BOOL isLocal;
 @end
 
-@implementation CXCarouselView
+@implementation CXCarouselView{
+    struct{
+        unsigned int response : 1;
+    } _delegateFlags;
+}
 
 +(instancetype)initWithFrame:(CGRect)frame hasTimer:(BOOL)hastimer interval:(NSUInteger)inter placeHolder:(UIImage *)image{
     
@@ -133,7 +137,7 @@
 }
 
 -(void) touch{
-    if ([self.delegate respondsToSelector:@selector(carouselTouch:atIndex:)]) {
+    if (_delegateFlags.response) {
         [self.delegate carouselTouch:self atIndex:self.currentImageIndex];
     }
 }
@@ -204,5 +208,11 @@
         _wheelPageControl.numberOfPages = self.imageNum;
     }
     return _wheelPageControl;
+}
+
+#pragma mark - Setter
+-(void)setDelegate:(id<CXCarouseViewDelegate>)delegate{
+    _delegate = delegate;
+    _delegateFlags.response = [self.delegate respondsToSelector:@selector(carouselTouch:atIndex:)];
 }
 @end

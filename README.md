@@ -14,6 +14,12 @@ self.carousel = [CXCarouselView initWithFrame:CGRectMake(0, 20, DeviceWidth , 20
 NSArray *array = @[@"img1",@"img2",@"img3"];
 [self.carousel setupWithArray:array];
 ```
+
+##响应点击事件
+```
+self.carousel.delegate = self;
+- (void) carouselTouch:(CXCarouselView*)carousel atIndex:(NSUInteger)index;
+```
 ##销毁
 ```
 [self.carousel destroy];
