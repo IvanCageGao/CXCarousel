@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define DeviceWidth     [UIScreen mainScreen].bounds.size.width
+#define DeviceHeight    [UIScreen mainScreen].bounds.size.height
+
 @protocol CXCarouseViewDelegate;
 @interface CXCarouselView : UIView
 
@@ -16,8 +19,6 @@
 +(instancetype)initWithFrame:(CGRect)frame hasTimer:(BOOL) hastimer interval:(NSUInteger) inter placeHolder:(UIImage*) image;
 
 -(void) setupWithArray:(NSArray *)array;
--(void) destroy;
--(void) restart;
 
 @end
 

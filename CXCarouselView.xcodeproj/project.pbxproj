@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F04A8BC1D7D401E008F8CF1 /* NSTimer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F04A8BB1D7D401E008F8CF1 /* NSTimer+Block.m */; };
 		D3ABEED81C86C76B00B81827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ABEED71C86C76B00B81827 /* main.m */; };
 		D3ABEEDB1C86C76B00B81827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ABEEDA1C86C76B00B81827 /* AppDelegate.m */; };
 		D3ABEEDE1C86C76B00B81827 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ABEEDD1C86C76B00B81827 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F04A8BA1D7D401E008F8CF1 /* NSTimer+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Block.h"; sourceTree = "<group>"; };
+		1F04A8BB1D7D401E008F8CF1 /* NSTimer+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Block.m"; sourceTree = "<group>"; };
 		D3ABEED31C86C76B00B81827 /* CXCarouselView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXCarouselView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ABEED71C86C76B00B81827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3ABEED91C86C76B00B81827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 			children = (
 				D3ABEEEE1C86C78F00B81827 /* CXCarouselView.h */,
 				D3ABEEEF1C86C78F00B81827 /* CXCarouselView.m */,
+				1F04A8BA1D7D401E008F8CF1 /* NSTimer+Block.h */,
+				1F04A8BB1D7D401E008F8CF1 /* NSTimer+Block.m */,
 			);
 			name = CXCarousel;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				D3ABEEDE1C86C76B00B81827 /* ViewController.m in Sources */,
 				D3ABEF161C86C7F000B81827 /* SDWebImageCompat.m in Sources */,
 				D3ABEF211C86C7F000B81827 /* UIView+WebCacheOperation.m in Sources */,
+				1F04A8BC1D7D401E008F8CF1 /* NSTimer+Block.m in Sources */,
 				D3ABEF1D1C86C7F000B81827 /* UIImage+GIF.m in Sources */,
 				D3ABEF1B1C86C7F000B81827 /* SDWebImagePrefetcher.m in Sources */,
 				D3ABEEDB1C86C76B00B81827 /* AppDelegate.m in Sources */,
@@ -410,6 +416,7 @@
 				D3ABEEEC1C86C76B00B81827 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

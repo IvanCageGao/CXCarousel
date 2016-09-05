@@ -8,6 +8,7 @@
 
 #import "CXCarouselView.h"
 #import "UIImageView+WebCache.h"
+#import "NSTimer+Block.h"
 @interface CXCarouselView()<UIScrollViewDelegate>
 
 @property BOOL hasTimer;
@@ -132,24 +133,16 @@
     if (self.interval == 0) {
         self.interval = 3;
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.interval target:self selector:@selector(updateWheel) userInfo:nil repeats:YES];
+    __weak typeof(self) weakSelf = self;
+    self.timer = [NSTimer cx_scheduledTimerWithTimeInterval:self.interval block:^{
+        [weakSelf updateWheel];
+    } repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void) touch{
     if (_delegateFlags.response) {
         [self.delegate carouselTouch:self atIndex:self.currentImageIndex];
-    }
-}
-
--(void) destroy{
-    [self.timer invalidate];
-    self.timer = nil;
-}
-
--(void) restart{
-    if (self.hasTimer && self.timer == nil) {
-        [self setupTimer];
     }
 }
 
@@ -215,4 +208,5 @@
     _delegate = delegate;
     _delegateFlags.response = [self.delegate respondsToSelector:@selector(carouselTouch:atIndex:)];
 }
+
 @end
