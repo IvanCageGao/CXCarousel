@@ -1,8 +1,8 @@
 # CXCarousel
 一个方便的滚播图控件
 ## 更新
-去掉了一些重复的方法，简化接口的使用。
-去掉dertroy方法和restart方法，简化使用，而且不用担心对象不能被正常释放。
+#####去掉了一些重复的方法，简化接口的使用。
+#####去掉dertroy方法和restart方法，简化使用，而且不用担心对象不能被正常释放。
 
 ![](https://github.com/wcxdell/CXCarousel/blob/master/image-folder/img.gif)
 ## 说明
