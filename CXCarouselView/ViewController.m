@@ -24,6 +24,7 @@
     [self.view addSubview:self.carousel];
     NSArray *array = @[@"img1",@"img2",@"img3"];
     [self.carousel setupWithArray:array];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +34,4 @@
 -(void)carouselTouch:(CXCarouselView *)carousel atIndex:(NSUInteger)index{
     NSLog(@"%@",@(index).stringValue);
 }
-
-
-
 @end

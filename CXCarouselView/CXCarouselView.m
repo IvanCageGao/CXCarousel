@@ -209,4 +209,9 @@
     _delegateFlags.response = [self.delegate respondsToSelector:@selector(carouselTouch:atIndex:)];
 }
 
+-(void)dealloc{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
 @end
